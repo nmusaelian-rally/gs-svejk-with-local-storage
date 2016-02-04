@@ -39,6 +39,7 @@ class NoteDB {
             return noteDB;
         });
     }
+    
     getDB() {
         var noteDB = localStorage.getItem(this.key);
         if (noteDB == undefined || noteDB == 'undefined') {
