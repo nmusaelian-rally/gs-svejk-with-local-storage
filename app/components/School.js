@@ -1,6 +1,7 @@
-import React from 'react';
-import Data from '../config/data';
+import React from 'react'
+import Data from '../config/data'
 import Notes from './Notes/Notes'
+import Webpack from '../../webpack.config.js'
 
 class School extends React.Component {
     constructor(){
@@ -9,7 +10,7 @@ class School extends React.Component {
     
     render(){
         let names = [];
-        console.log(this.props.params);
+        var home = "http://localhost:" + Webpack.devServer.port;
         Data.studentsData.map(function(item) {
             names.push(item.Name)
         });
@@ -22,6 +23,9 @@ class School extends React.Component {
             <div>
                 <h3>{this.props.params.schoolname}</h3>
                 <Notes schoolname={this.props.params.schoolname}/>
+                <p>
+                <a href={home}><i className="glyphicon glyphicon-home"></i></a>
+                </p>
             </div>
         )
     }

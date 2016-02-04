@@ -12,10 +12,10 @@ class Notes extends React.Component {
         }
     }
     render() {
-        
         return (
             <div>
                 <AddNote noteDB={this.state.noteDB} schoolname={this.props.schoolname}/>
+                <p />
                 <NotesList noteDB={this.state.noteDB} schoolname={this.props.schoolname}s/>
             </div>
         )
